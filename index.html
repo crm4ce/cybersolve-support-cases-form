@@ -12,7 +12,7 @@
             color: #000;
             overflow-x: hidden;
             height: 100%;
-            background-image: url("https://i.imgur.com/GMmCQHC.png");
+            background-image: url("https://cybersolve.com/wp-content/uploads/2023/09/CS-homepage-banner-new43.webp");
             background-repeat: no-repeat;
             background-size: 100% 100%
         }
@@ -22,6 +22,7 @@
             margin-top: 60px;
             margin-bottom: 60px;
             border: none !important;
+            background-image: linear-gradient(#00aeef, #00aeef, #00086c);
             box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
         }
 
@@ -40,10 +41,16 @@
             border-radius: 5px !important;
             margin: 5px 0px;
             box-sizing: border-box;
-            border: 1px solid #ccc;
+            border: 1px solid rgb(204, 204, 204);
             font-size: 18px !important;
             font-weight: 300
         }
+
+        .button {
+            font-weight: 900;
+            border: 1px solid #00aeef !important;
+            background-color: #00aeef !important;
+        } 
 
         input:focus,
         textarea:focus {
@@ -92,13 +99,16 @@
     <div class="container-fluid px-1 py-5 mx-auto">
         <div class="row d-flex justify-content-center">
             <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
-                <!-- <h3>Request a Demo</h3>
-                <p class="blue-text">Just answer a few questions<br> so that we can personalize the right experience for
-                    you.</p> -->
+                <!-- <h3>Request a Demo</h3> -->
+                
                 <div class="card">
                     <img src="https://cybersolve.com/wp-content/uploads/2021/08/logo-white.png" style="background-color: #000; border-radius:12px; padding:25px; margin:25px;" alt="CyberSolve">
                     <!-- <h5 class="text-center mb-4">Powering world-class companies</h5> -->
-
+                    <p style="color: black;">
+                        <b>
+                            Welcome to Cybersolve support help desk, kindly fill below information to understand your issue better.
+                        </b><br> <br>
+                    </p>
                     <form class="form-card"
                         action="https://crm4ce--devcyber.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DDS000000t9oE"
                         method="POST">
@@ -109,12 +119,11 @@
                         <!--  ----------------------------------------------------------------------  -->
                         <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
                         <!--  these lines if you wish to test in debug mode.                          -->
-                         <input type="hidden" name="debug" value=4>                             
-                         
+                         <input type="hidden" name="debug" value=1>                             
+                         <input type="hidden" name="debugEmail" value="rmate@cybersolve.com">
                          <input type="hidden" name="debugEmail" value="kvenkatesan@cybersolve.com">
                          <input type="hidden" name="debugEmail" value="srikrishnan@cybersolve.com">
-                         <input type="hidden" name="debugEmail" value="bonagiri.sukesh@cybersolve.com">
-                         <input type="hidden" name="debugEmail" value="rmate@cybersolve.com">                                   
+                         <input type="hidden" name="debugEmail" value="bonagiri.sukesh@cybersolve.com">                                   
                         <!--  ----------------------------------------------------------------------  -->
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
@@ -157,9 +166,16 @@
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label for="description">Description</label><textarea name="description"></textarea><br>
-
+                                <label for="recordType">Case Record Type</label><select id="recordType"
+                                    name="recordType">
+                                    <option value="">--None--</option>
+                                    <option value="012DS000008HYIW">Billing Case</option>
+                                    <option value="012DS000007MNdJ">CRM4CE Salesforce Implementation Projects</option>
+                                    <option value="012DS000007MNcp">CyberSolve Support</option>
+                                    <option value="012Dn000000icPy">PMT Project</option>
+                                </select><br>
                             </div>
+                            
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <label for="priority">Priority</label><select id="priority" name="priority">
                                     <option value="">--None--</option>
@@ -170,34 +186,27 @@
                             </div>
                         </div>
 
-                        <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex">
-                                <label for="recordType">Case Record Type</label><select id="recordType"
-                                    name="recordType">
-                                    <option value="">--None--</option>
-                                    <option value="012DS000008HYIW">Billing Case</option>
-                                    <option value="012DS000007MNdJ">CRM4CE Salesforce Implementation Projects</option>
-                                    <option value="012DS000007MNcp">CyberSolve Support</option>
-                                    <option value="012Dn000000icPy">PMT Project</option>
-                                </select><br>
-                            </div>
-                            <div class="form-group col-sm-6 flex-column d-flex">
-                                <!--Case Description:<textarea id="00NDn00000aGPj2" name="00NDn00000aGPj2" rows="3"
-                                    type="text" wrap="soft"></textarea><br> -->
+                        <div style="display: flex;">
+                            <div style="width: 100%; display:flex; flex-direction: column;">
+                                <label style="text-align: left;" for="description">Description</label>
+                                <textarea name="description"></textarea><br>
 
                             </div>
+                            <!-- <div class="form-group col-sm-6 flex-column d-flex">
+                                Case Description:<textarea id="00NDn00000aGPj2" name="00NDn00000aGPj2" rows="3"
+                                    type="text" wrap="soft"></textarea><br>
+
+                            </div> -->
                         </div>
 
 
 
-                        <div class="row justify-content-between text-left">
-                            <div class="form-group col-sm-6 flex-column d-flex">
+                        <div style="display: flex;">
+
+                            <div style="width: 100%;">
                                 <input type="hidden" id="external" name="external" value="1" /><br>
 
-                            </div>
-                            <div class="form-group col-sm-6 flex-column d-flex">
-                                <input type="submit" name="submit">
-
+                                <input style="padding:15px 50px 15px 50px;" class="button" type="submit" name="submit">
                             </div>
                         </div>
 
