@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="nofollow" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            color: #000;
+            overflow-x: hidden;
+            height: 100%;
+            background-image: url("https://i.imgur.com/GMmCQHC.png");
+            background-repeat: no-repeat;
+            background-size: 100% 100%
+        }
+
+        .card {
+            padding: 30px 40px;
+            margin-top: 60px;
+            margin-bottom: 60px;
+            border: none !important;
+            box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.2)
+        }
+
+        .blue-text {
+            color: #00BCD4
+        }
+
+        .form-control-label {
+            margin-bottom: 0
+        }
+
+        input,
+        textarea,
+        button {
+            padding: 8px 15px;
+            border-radius: 5px !important;
+            margin: 5px 0px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            font-size: 18px !important;
+            font-weight: 300
+        }
+
+        input:focus,
+        textarea:focus {
+            -moz-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            border: 1px solid #00BCD4;
+            outline-width: 0;
+            font-weight: 400
+        }
+
+        .btn-block {
+            text-transform: uppercase;
+            font-size: 15px !important;
+            font-weight: 400;
+            height: 43px;
+            cursor: pointer
+        }
+
+        .btn-block:hover {
+            color: #fff !important
+        }
+
+        button:focus {
+            -moz-box-shadow: none !important;
+            -webkit-box-shadow: none !important;
+            box-shadow: none !important;
+            outline-width: 0
+        }
+    </style>
+</head>
+
+<body>
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+    <!--  If necessary, please modify the charset parameter to specify the        -->
+    <!--  character set of your HTML page.                                        -->
+    <!--  ----------------------------------------------------------------------  -->
+
+    <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--  ----------------------------------------------------------------------  -->
+
+    <div class="container-fluid px-1 py-5 mx-auto">
+        <div class="row d-flex justify-content-center">
+            <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+                <!-- <h3>Request a Demo</h3>
+                <p class="blue-text">Just answer a few questions<br> so that we can personalize the right experience for
+                    you.</p> -->
+                <div class="card">
+                    <img src="https://cybersolve.com/wp-content/uploads/2021/08/logo-white.png" style="background-color: #000; border-radius:12px; padding:25px; margin:25px;" alt="CyberSolve">
+                    <!-- <h5 class="text-center mb-4">Powering world-class companies</h5> -->
+
+                    <form class="form-card"
+                        action="https://crm4ce--devcyber.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DDS000000t9oE"
+                        method="POST">
+
+                        <input type=hidden name="orgid" value="00DDS000000t9oE">
+                       <!--- <input type=hidden name="retURL" value="http://suppport.Cybersolve.com"> -->
+
+                        <!--  ----------------------------------------------------------------------  -->
+                        <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+                        <!--  these lines if you wish to test in debug mode.                          -->
+                         <input type="hidden" name="debug" value=4>                             
+                         
+                         <input type="hidden" name="debugEmail" value="kvenkatesan@cybersolve.com">
+                         <input type="hidden" name="debugEmail" value="srikrishnan@cybersolve.com">
+                         <input type="hidden" name="debugEmail" value="bonagiri.sukesh@cybersolve.com">
+                         <input type="hidden" name="debugEmail" value="rmate@cybersolve.com">                                   
+                        <!--  ----------------------------------------------------------------------  -->
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label for="name">Contact Name</label><input id="name" maxlength="80" name="name"
+                                    size="20" type="text" /><br>
+
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label for="subject">Subject</label><input id="subject" maxlength="80" name="subject"
+                                    size="20" type="text" /><br>
+
+                            </div>
+                        </div>
+
+
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label for="reason">Case Reason</label><select id="reason" name="reason">
+                                    <option value="">--None--</option>
+                                    <option value="New Project">New Project</option>
+                                    <option value="Existing Project">Existing Project</option>
+                                    <option value="Integrations">Integrations</option>
+                                    <option value="Training">Training</option>
+                                    <option value="Complex functionality">Complex functionality</option>
+                                    <option value="New Question">New Question</option>
+                                    <option value="Support Needed: Sales Cloud">Support Needed: Sales Cloud</option>
+                                    <option value="Support Needed: Marketing Cloud (Pardot)">Support Needed: Marketing
+                                        Cloud (Pardot)</option>
+                                    <option value="Support Needed: Automation">Support Needed: Automation</option>
+                                    <option value="Support Needed: Reports &amp; Dashboards">Support Needed: Reports
+                                        &amp; Dashboards</option>
+                                </select><br>
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label for="email">Case Requestor Email</label><input id="email" maxlength="80" name="email" size="20"
+                                    type="text" /><br> 
+
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label for="description">Description</label><textarea name="description"></textarea><br>
+
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label for="priority">Priority</label><select id="priority" name="priority">
+                                    <option value="">--None--</option>
+                                    <option value="High">High</option>
+                                    <option value="Medium">Medium</option>
+                                    <option value="Low">Low</option>
+                                </select><br>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <label for="recordType">Case Record Type</label><select id="recordType"
+                                    name="recordType">
+                                    <option value="">--None--</option>
+                                    <option value="012DS000008HYIW">Billing Case</option>
+                                    <option value="012DS000007MNdJ">CRM4CE Salesforce Implementation Projects</option>
+                                    <option value="012DS000007MNcp">CyberSolve Support</option>
+                                    <option value="012Dn000000icPy">PMT Project</option>
+                                </select><br>
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <!--Case Description:<textarea id="00NDn00000aGPj2" name="00NDn00000aGPj2" rows="3"
+                                    type="text" wrap="soft"></textarea><br> -->
+
+                            </div>
+                        </div>
+
+
+
+                        <div class="row justify-content-between text-left">
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <input type="hidden" id="external" name="external" value="1" /><br>
+
+                            </div>
+                            <div class="form-group col-sm-6 flex-column d-flex">
+                                <input type="submit" name="submit">
+
+                            </div>
+                        </div>
+
+
+
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
