@@ -114,15 +114,19 @@
                         method="POST">
 
                         <input type=hidden name="orgid" value="00DDS000000t9oE">
-                       <!--- <input type=hidden name="retURL" value="http://suppport.Cybersolve.com"> -->
+                       - <input type=hidden name="retURL" id="returl" value="./">
+
+                       <script>
+                        document.getElementById('returl').value = window.location.href;
+                       </script>
 
                         <!--  ----------------------------------------------------------------------  -->
                         <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
                         <!--  these lines if you wish to test in debug mode.                          -->
-                         <input type="hidden" name="debug" value=1>                             
+                         <!-- <input type="hidden" name="debug" value=1>                             
+                         <input type="hidden" name="debugEmail" value="rmate@cybersolve.com"> -->
+                         <!--<input type="hidden" name="debugEmail" value="kvenkatesan@cybersolve.com">
                          <input type="hidden" name="debugEmail" value="rmate@cybersolve.com">
-                         <input type="hidden" name="debugEmail" value="kvenkatesan@cybersolve.com">
-                         <input type="hidden" name="debugEmail" value="srikrishnan@cybersolve.com">
                          <input type="hidden" name="debugEmail" value="bonagiri.sukesh@cybersolve.com">                                   
                         <!--  ----------------------------------------------------------------------  -->
                         <div class="row justify-content-between text-left">
