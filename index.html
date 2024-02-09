@@ -81,6 +81,9 @@
             outline-width: 0
         }
     </style>
+
+    <!-- <script src="https://cdn.ckeditor.com/ckeditor5/38.1.0/classic/ckeditor.js"></script> -->
+
 </head>
 
 <body>
@@ -114,7 +117,7 @@
                         method="POST">
 
                         <input type=hidden name="orgid" value="00DDS000000t9oE">
-                       - <input type=hidden name="retURL" id="returl" value="./">
+                        <input type=hidden name="retURL" id="returl" value="./">
 
                        <script>
                         document.getElementById('returl').value = window.location.href;
@@ -132,12 +135,12 @@
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <label for="name">Contact Name</label><input id="name" maxlength="80" name="name"
-                                    size="20" type="text" /><br>
+                                    size="20" type="text" style="height: 35px" /><br>
 
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <label for="subject">Subject</label><input id="subject" maxlength="80" name="subject"
-                                    size="20" type="text" /><br>
+                                    size="20" type="text" style="height: 35px"/><br>
 
                             </div>
                         </div>
@@ -145,7 +148,7 @@
 
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label for="reason">Case Reason</label><select id="reason" name="reason">
+                                <label for="reason">Case Reason</label><select id="reason" name="reason" style="height: 35px; margin-top: 5px;">
                                     <option value="">--None--</option>
                                     <option value="New Project">New Project</option>
                                     <option value="Existing Project">Existing Project</option>
@@ -159,11 +162,12 @@
                                     <option value="Support Needed: Automation">Support Needed: Automation</option>
                                     <option value="Support Needed: Reports &amp; Dashboards">Support Needed: Reports
                                         &amp; Dashboards</option>
+                                    <option value="Other">Other</option>
                                 </select><br>
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label for="email">Case Requestor Email</label><input id="email" maxlength="80" name="email" size="20"
-                                    type="text" /><br> 
+                                <label for="email">Case Owner Email</label><input id="email" maxlength="80" name="email" size="20"
+                                    type="text"  style="height: 35px"/><br> 
 
                             </div>
                         </div>
@@ -171,17 +175,17 @@
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <label for="recordType">Case Record Type</label><select id="recordType"
-                                    name="recordType">
+                                    name="recordType" style="height: 35px">
                                     <option value="">--None--</option>
                                     <option value="012DS000008HYIW">Billing Case</option>
                                     <option value="012DS000007MNdJ">CRM4CE Salesforce Implementation Projects</option>
-                                    <option value="012DS000007MNcp">CyberSolve Support</option>
+                                    <option value="012DS000007MNcp" selected>CyberSolve Support</option>
                                     <option value="012Dn000000icPy">PMT Project</option>
                                 </select><br>
                             </div>
                             
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label for="priority">Priority</label><select id="priority" name="priority">
+                                <label for="priority">Priority</label><select id="priority" name="priority" style="height: 35px">
                                     <option value="">--None--</option>
                                     <option value="High">High</option>
                                     <option value="Medium">Medium</option>
@@ -192,8 +196,49 @@
 
                         <div style="display: flex;">
                             <div style="width: 100%; display:flex; flex-direction: column;">
-                                <label style="text-align: left;" for="description">Description</label>
-                                <textarea name="description"></textarea><br>
+                                <label style="text-align: left;" for="description">Case Description</label>
+                                
+                                <textarea  id="00NDn00000aGPj2MAG" name="00NDn00000aGPj2MAG" rows="10" type="text" wrap="soft" style="height: 65px"></textarea><script>CKEDITOR.timestamp = '4.18.0.10';
+                                    var protocolAndHost = window.location.protocol + '//' + window.location.host;
+                                    
+                                    var editor = CKEDITOR.replace('00NDn00000aGPj2MAG', {
+                                    removePlugins : 'elementspath,maximize,image,tabletools,liststyle,contextmenu,resize',
+                                    baseHref : protocolAndHost + '/ckeditor/ckeditor-4.x/rel/',
+                                    customConfig : '/ckeditor/ckeditor-4.x/rel/sfdc-config.js',
+                                    height : '170',
+                                    bodyId : '00NDn00000aGPj2MAG_rta_body',
+                                    toolbar : 'SalesforceBasic',
+                                    sfdcLabels :{CkeLineHeight : { singleValue : 'Single', doubleValue : 'Double', title : 'Line Height', secondValue : '1.15', thirdValue : '1.5'}, CkeCodeBlock : { addCodeSample : 'Add a code sample'}, CkeQuickText : { title : 'Insert quick text'}, CkeMediaEmbed : { iframeMissing : 'Invalid &lt;iframe&gt; element. Please use valid code from the approved sites.', subtitle : 'Paste &amp;lt;iframe&amp;gt; code here:', description : 'Use &lt;iframe&gt; code from an approved video source.', title : 'Embed Multimedia Content', exampleTitle : 'Example:', example : '\n            \n                &lt;iframe width=\&quot;560\&quot; height=\&quot;315\&quot; src=\&quot;https://www.youtube.com/embed/KcOm0TNvKBA\&quot; frameborder=\&quot;0\&quot; allowfullscreen&gt;&lt;/iframe&gt;\n            \n        '}, CkeImageMenu : { uploadFile : ' Browse or Upload', uploadCms : 'Salesforce CMS', pasteUrl : 'Paste Image URL', uploadUrl : 'Web Image', uploadSFFile : 'Salesforce Files', title : 'Insert images into your message'}, CkeImagePaste : { CkeImagePasteWarning : 'Pasting an image is not working properly with Firefox, please use [Copy Image location] instead.'}, CkeImageDialog : { infoTab_desc_info : 'Enter a description of the image for visually impaired users', uploadTab_desc : 'Description', defaultImageDescription : 'User-added image', uploadTab_file_info : 'Maximum size 1 MB. Only PNG, GIF or JPEG', uploadTab_desc_info : 'Enter a description of the image for visually impaired users', imageUploadLimit_info : 'Max number of upload images exceeded', btn_insert_tooltip : 'Insert Image', httpUrlWarning : 'Are you sure you want to use an http URL? Using http image URLs may result in security warnings about insecure content. To avoid these warnings, use https image URLs instead.', title : 'Insert Image', error : 'Error:', uploadTab : 'Upload Image', wrongFileTypeError : 'You can insert only .gif .jpeg and .png files.', infoTab_url : 'URL', infoTab : 'Web Address', infoTab_url_info : 'Example: http://www.mysite.com/myimage.jpg', missingUrlError : 'You must enter a URL', uploadTab_file : 'Select Image', btn_update_tooltip : 'Update Image', infoTab_desc : 'Description', btn_insert : 'Insert', btn_update : 'Update', btn_upadte : 'Update', invalidUrlError : 'You can only use http:, https:, data:, //, /, or relative URL schemes.'}, sfdcSwitchToText : { sfdcSwitchToTextAlt : 'Use plain text'}, CkeSmartLink : { title : 'Insert a Smart Link', SmartLinkContextMenuEdit : 'Edit Smart Link'}},
+                                    contentsCss: ['/ckeditor/ckeditor-4.x/rel/contents.css', '/sCSS/59.0/sprites/1698322264000/Theme3/default/gc/CKEditor.css', '/sCSS/59.0/sprites/1698322264000/Theme3/default/gc/HtmlDetailElem.css'],
+                                    disableNativeSpellChecker : false,
+                                    language : 'en-US',
+                                    allowIframe : false,
+                                    isPardotOrg : false,
+                                    isCmsOnly : false,
+                                    sharedSpaces : { top : 'cke_topSpace', bottom : ' cke_bottomSpace' }
+                                    ,filebrowserImageUploadUrl : '/_ui/common/request/servlet/RtaImageUploadServlet?_CONFIRMATIONTOKEN=VmpFPSxNakF5TkMwd01pMHhNbFF3TnpveU9Ub3dNQzR4T0RCYSxabzI0Mzc0bWdYSUNGdnVEeXkxNmhkalV3eFgyeVpqZHZCV0VKVnBqXzNVPSxOR0ZtTXpjMg=='
+                                    });
+                                    
+                                    editor.on('instanceReady', function( evt ) {
+                                        try {
+                                            var id = evt.editor.name;
+                                            CKiframe = document.getElementById('cke_' + id).querySelector('iframe');
+                                            meta = document.createElement('meta');
+                                            meta.setAttribute('name', 'referrer');
+                                            meta.setAttribute('content', 'no-referrer');
+                                            CKiframe.contentDocument.head.appendChild(meta);
+                                        } catch(e) {}
+                                    } );
+                                    
+                                    </script><br>
+
+                                    <script>
+                                        ClassicEditor
+                                            .create(document.getElementById('00NDn00000aGPj2MAG'))
+                                            .catch(error => {
+                                                console.error( error );
+                                            } );
+                                        </script>
 
                             </div>
                             <!-- <div class="form-group col-sm-6 flex-column d-flex">
@@ -210,7 +255,7 @@
                             <div style="width: 100%;">
                                 <input type="hidden" id="external" name="external" value="1" /><br>
 
-                                <input style="padding:15px 50px 15px 50px;" class="button" type="submit" name="submit">
+                                <input style="padding:15px 50px 15px 50px;" class="button" type="submit" name="submit" onClick="alert('Thank you for submitting the form, your case is created successfully.');">
                             </div>
                         </div>
 
