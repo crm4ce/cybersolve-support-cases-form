@@ -83,7 +83,6 @@
     </style>
 
     <!-- <script src="https://cdn.ckeditor.com/ckeditor5/38.1.0/classic/ckeditor.js"></script> -->
-
 </head>
 
 <body>
@@ -91,6 +90,10 @@
     <!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
     <!--  If necessary, please modify the charset parameter to specify the        -->
     <!--  character set of your HTML page.                                        -->
+    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+    <!--  these lines if you wish to test in debug mode.                          -->
+     <!-- <input type="hidden" name="debug" value=1>                              -->
+     <!-- <input type="hidden" name="debugEmail" value="rmate@cybersolve.com">                                 -->
     <!--  ----------------------------------------------------------------------  -->
 
     <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
@@ -112,9 +115,23 @@
                             Welcome to Cybersolve support help desk, kindly fill below information to understand your issue better.
                         </b><br> <br>
                     </p>
+                    <script>
+                        function validateForm() { // first form on page
+                            var caseDescription = this.document.getElementById('00NDn00000aGPj2MAG').value; // first field in form
+                            if (caseDescription == '') {
+                              alert("Please add case description");
+                              return false;
+                            }
+                            else{
+                                alert('Thank you for submitting the form, your case is created successfully.');
+                                return true; // allow submission
+                            }
+                          }
+                    </script>
                     <form class="form-card"
                         action="https://crm4ce--devcyber.sandbox.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8&orgId=00DDS000000t9oE"
-                        method="POST">
+                        method="POST"
+                        onsubmit="validateForm();">
 
                         <input type=hidden name="orgid" value="00DDS000000t9oE">
                         <input type=hidden name="retURL" id="returl" value="./">
@@ -134,13 +151,14 @@
                         <!--  ----------------------------------------------------------------------  -->
                         <div class="row justify-content-between text-left">
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label for="name">Contact Name</label><input id="name" maxlength="80" name="name"
-                                    size="20" type="text" style="height: 35px" /><br>
+                                <!-- <label for="name">Contact Name</label><input id="name" maxlength="80" name="name" 
+                                    size="20" type="text" style="height: 35px" /><br>-->
+                                    Contact Name <input  id="00NRK000003UykI" maxlength="50" name="00NRK000003UykI" size="20" type="text" style="height: 35px; margin-top: 14px;" required><br>
 
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
                                 <label for="subject">Subject</label><input id="subject" maxlength="80" name="subject"
-                                    size="20" type="text" style="height: 35px"/><br>
+                                    size="20" type="text" style="height: 35px;" required><br>
 
                             </div>
                         </div>
@@ -166,7 +184,7 @@
                                 </select><br>
                             </div>
                             <div class="form-group col-sm-6 flex-column d-flex">
-                                <label for="email">Case Owner Email</label><input id="email" maxlength="80" name="email" size="20"
+                                <label for="email"> Email</label><input id="email" maxlength="80" name="email" size="20"
                                     type="text"  style="height: 35px"/><br> 
 
                             </div>
@@ -177,10 +195,10 @@
                                 <label for="recordType">Case Record Type</label><select id="recordType"
                                     name="recordType" style="height: 35px">
                                     <option value="">--None--</option>
-                                    <option value="012DS000008HYIW">Billing Case</option>
-                                    <option value="012DS000007MNdJ">CRM4CE Salesforce Implementation Projects</option>
+                                    <!-- <option value="012DS000008HYIW">Billing Case</option> -->
+                                    <!-- <option value="012DS000007MNdJ">CRM4CE Salesforce Implementation Projects</option> -->
                                     <option value="012DS000007MNcp" selected>CyberSolve Support</option>
-                                    <option value="012Dn000000icPy">PMT Project</option>
+                                    <!-- <option value="012Dn000000icPy">PMT Project</option> -->
                                 </select><br>
                             </div>
                             
@@ -198,7 +216,7 @@
                             <div style="width: 100%; display:flex; flex-direction: column;">
                                 <label style="text-align: left;" for="description">Case Description</label>
                                 
-                                <textarea  id="00NDn00000aGPj2MAG" name="00NDn00000aGPj2MAG" rows="10" type="text" wrap="soft" style="height: 65px"></textarea><script>CKEDITOR.timestamp = '4.18.0.10';
+                                <textarea  id="00NDn00000aGPj2MAG" name="00NDn00000aGPj2MAG" rows="10" type="text" wrap="soft" style="height: 65px" required></textarea><script>CKEDITOR.timestamp = '4.18.0.10';
                                     var protocolAndHost = window.location.protocol + '//' + window.location.host;
                                     
                                     var editor = CKEDITOR.replace('00NDn00000aGPj2MAG', {
@@ -255,7 +273,7 @@
                             <div style="width: 100%;">
                                 <input type="hidden" id="external" name="external" value="1" /><br>
 
-                                <input style="padding:15px 50px 15px 50px;" class="button" type="submit" name="submit" onClick="alert('Thank you for submitting the form, your case is created successfully.');">
+                                <input style="padding:15px 50px 15px 50px; cursor:pointer;" class="button" type="submit" name="submit" >
                             </div>
                         </div>
 
@@ -263,6 +281,7 @@
 
 
                     </form>
+                    
 
                 </div>
             </div>
